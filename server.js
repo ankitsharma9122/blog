@@ -5,7 +5,9 @@ const articleRouter = require('./routes/articles')
 const methodOverride = require('method-override')
 const app = express()
 
-mongoose.connect('mongodb://localhost/blog')
+mongoose.connect('mongodb+srv://ankit:Ankit123456@cluster0.shium.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',() => {
+  console.log("DATABASE CONNECTED");
+})
 
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
